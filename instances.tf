@@ -67,7 +67,8 @@ resource "aws_instance" "code_delpoy_instance" {
     }
   }
   tags = {
-    "Name" = "${local.name_suffix}-instance"
-    "AZ"   = "${data.aws_availability_zones.az.names[0]}"
+    "Name"    = "${local.name_suffix}-instance"
+    "AZ"      = "${data.aws_availability_zones.az.names[0]}"
+    "Version" = "1.0"
   }
 }
