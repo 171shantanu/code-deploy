@@ -50,14 +50,13 @@ data "aws_key_pair" "k8s_keypair" {
 }
 
 # Resource block for the AWS EC2 Instance.
-resource "aws_instance" "code_delpoy_instance" {
+resource "aws_instance" "codedeploy_instance" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.ec2_instance_type
   key_name               = data.aws_key_pair.k8s_keypair.key_name
   availability_zone      = data.aws_availability_zones.az.names[0]
   subnet_id              = data.aws_subnet.public_1.id
   vpc_security_group_ids = [data.aws_security_group.master_node_sg.id]
-  iam_instance_profile = 
 
   root_block_device {
     volume_size = 8
