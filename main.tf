@@ -1,6 +1,6 @@
 # Declaring locals
 locals {
-  name_suffix = "${var.environment}-${var.project}"
+  name_suffix = "${var.project}-${var.environment}"
 }
 
 # variable for project
@@ -14,5 +14,12 @@ variable "project" {
 variable "environment" {
   type        = string
   description = "environment"
-  default     = "Live"
+  default     = "Test"
+}
+
+# variable for the EC2 instance type
+variable "ec2_instance_type" {
+  type        = string
+  description = "EC2 Instance Type"
+  default     = "t2.micro"
 }
