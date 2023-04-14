@@ -37,7 +37,7 @@ data "aws_subnet" "public_1" {
 data "aws_security_group" "master_node_sg" {
   filter {
     name   = "tag:Name"
-    values = ["Live-Self Managed k8s-Worker-Node-SG"]
+    values = ["Live-Self Managed k8s-Master-Node-SG"]
   }
 }
 
