@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git branch: 'main', url: 'https://<token>@github.com/username/repoName.git'
+                            git branch: 'main', url: 'https://github.com/171shantanu/code-deploy.git'
                         }
                     }
                 }
